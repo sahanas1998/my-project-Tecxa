@@ -6,6 +6,7 @@ import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import Button from '@mui/material/Button';
 import DataThresholdingIcon from '@mui/icons-material/DataThresholding';
 
+
 export const CardItem = ({ title, price, value , icon , color}) => {
     return (
         <div>

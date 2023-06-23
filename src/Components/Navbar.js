@@ -39,6 +39,10 @@ const Navbar = () => {
     {name:"Subscription",link:"/subscription"},
   ];
 
+  const closeMobileMenu = () => {
+    setOpen(false);
+  };
+  
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-slate-200 flex justify-between items-center p-4 sm:p-6 md:6">
      <div className="flex">
@@ -56,11 +60,11 @@ const Navbar = () => {
 
      </div>
       <div className="text-sm flex">
-      <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0  w-full md:w-auto md:pl-0 pl-9 duration-500 ease-in ${open ? 'top-20 ':'top-[-490px]'}`}>
+      <ul className={`md:flex md:items-center md:pb-0 pb-12 pt-12 sm:pt-0  absolute md:static md:z-auto z-[-1]  w-full md:w-auto md:pl-0 pl-9 duration-500 ease-in ${open ? 'left-5 ':'left-[-490px]'}`}>
         {
           Links.map((link)=>(
             <li key={link.name} className={`md:ml-6 text-xl md:my-0 my-7 text-black-800 font-semibold ${location.pathname === link.link ? 'underline' : ''}`}>
-              <Link to={link.link}>{link.name}</Link>
+              <Link to={link.link} onClick={closeMobileMenu}>{link.name}</Link>
             </li>
           ))
         }
